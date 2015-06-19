@@ -1,3 +1,3 @@
 # WordPress Update Monitor Plugin
 
-Wordpress plugin that gathers and tracks pending Wordpress core / plugin update details. These details are sent as JSON to a third party endpoint for handling, on a scheduled basis (leveraging WP's cron).
+WordPress plugin that gathers and tracks pending WordPress core / plugin update details. These details are sent as JSON to a third party endpoint for handling, on a scheduled basis (leveraging WP's cron).

@@ -8,18 +8,18 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @package           Wordpress_Update_Monitor
+ * @package           Update_Monitor
  *
  * @wordpress-plugin
- * Plugin Name:       WordPress Update Monitor
+ * Plugin Name:       Update Monitor
  * Plugin URI:        TODO
- * Description:       Wordpress plugin that gathers and tracks pending Wordpress core / plugin update details.
+ * Description:       WordPress plugin that gathers and tracks pending WordPress core / plugin update details.
  * Version:           0.0.1
  * Author:            Hugh Willson (Octonary Inc.)
  * Author URI:        TODO
  * License:           MIT
  * License URI:       http://opensource.org/licenses/MIT
- * Text Domain:       Wordpress_Update_Monitor
+ * Text Domain:       Update_Monitor
  * Domain Path:       /languages
  */
 
@@ -30,30 +30,32 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-plugin-name-activator.php
+ * This action is documented in includes/class-update-monitor-activator.php
  */
-function activate_plugin_name() {
-  require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
-  Plugin_Name_Activator::activate();
+function activate_update_monitor() {
+  require_once plugin_dir_path( __FILE__ )
+    . 'includes/class-update-monitor-activator.php';
+  Update_Monitor_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-plugin-name-deactivator.php
+ * This action is documented in includes/class-update-monitor-deactivator.php
  */
-function deactivate_plugin_name() {
-  require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
-  Plugin_Name_Deactivator::deactivate();
+function deactivate_update_monitor() {
+  require_once plugin_dir_path( __FILE__ )
+    . 'includes/class-update-monitor-deactivator.php';
+  Update_Monitor_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'activate_update_monitor' );
+register_deactivation_hook( __FILE__, 'deactivate_update_monitor' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-update-monitor.php';
 
 /**
  * Begins execution of the plugin.
@@ -62,10 +64,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  */
-function run_plugin_name() {
+function run_update_monitor() {
 
-  $plugin = new Plugin_Name();
+  $plugin = new Update_Monitor();
   $plugin->run();
 
 }
-run_plugin_name();
+run_update_monitor();
