@@ -63,4 +63,25 @@ class Update_Monitor_Admin {
     );
   }
 
+  /**
+   * Add submenu to Settings menu.
+   */
+  public function add_settings_submenu() {
+    add_options_page(
+      'Update Monitor Settings',
+      'Update Monitor',
+      'manage_options',
+      'update-monitor-menu',
+      array($this, 'update_monitor_page')
+    );
+  }
+
+  /**
+   * Generate the admin settings page.
+   */
+  public function update_monitor_page() {
+    require_once plugin_dir_path(__FILE__)
+      . 'partials/update-monitor-admin-display.php';
+  }
+
 }

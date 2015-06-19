@@ -8,4 +8,7 @@
  */
 ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<div id="update-monitor-admin">
+  <h1>Update Monitor Settings</h1>
+  <p>TODO</p>
+</div>

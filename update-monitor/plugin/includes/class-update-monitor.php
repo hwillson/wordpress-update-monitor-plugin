@@ -47,8 +47,8 @@ class Update_Monitor {
    */
   public function __construct() {
 
-    $this->plugin_name = 'plugin-name';
-    $this->version = '1.0.0';
+    $this->plugin_name = 'update-monitor';
+    $this->version = '0.0.1';
 
     $this->load_dependencies();
     $this->set_locale();
@@ -122,9 +122,28 @@ class Update_Monitor {
    * @access   private
    */
   private function define_admin_hooks() {
-    $plugin_admin = new Update_Monitor_Admin( $this->get_plugin_name(), $this->get_version() );
-    $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-    $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+
+    $plugin_admin =
+      new Update_Monitor_Admin($this->get_plugin_name(), $this->get_version());
+
+    $this->loader->add_action(
+      'admin_enqueue_scripts',
+      $plugin_admin,
+      'enqueue_styles'
+    );
+
+    $this->loader->add_action(
+      'admin_enqueue_scripts',
+      $plugin_admin,
+      'enqueue_scripts'
+    );
+
+    $this->loader->add_action(
+      'admin_menu',
+      $plugin_admin,
+      'add_settings_submenu'
+    );
+
   }
 
   /**
