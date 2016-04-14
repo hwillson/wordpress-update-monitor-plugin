@@ -80,6 +80,8 @@ class Update_Monitor_Admin {
    * Generate the admin settings page.
    */
   public function update_monitor_page() {
+    //$plugins = json_encode(get_plugins(), JSON_PRETTY_PRINT);
+    $plugins = print_r(get_plugins(), true);
     require_once plugin_dir_path(__FILE__)
       . 'partials/update-monitor-admin-display.php';
   }

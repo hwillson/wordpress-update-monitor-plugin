@@ -10,5 +10,7 @@
 
 <div id="update-monitor-admin">
   <h1>Update Monitor Settings</h1>
-  <p>TODO</p>
+  <pre>
+    <?php echo $plugins; ?>
+  </pre>
 </div>
